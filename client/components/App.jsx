@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import { Route, Switch } from 'react-router-dom'
 import { fetchFruits } from '../actions'
 
+import { BowlingScoreCard } from './BowlingScoreCard'
 export class App extends React.Component {
   state = {
     fruits: []
@@ -15,12 +16,12 @@ export class App extends React.Component {
   render () {
     return (
       <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {this.props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
+        <h1>React Bowling!</h1>
+        <div>
+          <Switch>
+            <Route exact path="/" component={BowlingScoreCard} />
+          </Switch>
+        </div>
       </div>
     )
   }
