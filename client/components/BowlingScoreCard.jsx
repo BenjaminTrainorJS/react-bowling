@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
 import SecondBowl from './SecondBowl.jsx'
 
@@ -41,4 +42,4 @@ function BowlingScoreCard (props) {
   )
 }
 
-export default BowlingScoreCard
+export default connect()(BowlingScoreCard)
